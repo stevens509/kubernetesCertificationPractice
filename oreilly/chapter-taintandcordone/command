@@ -1,0 +1,15 @@
+kubectl create deployment nginx --image=nginx  --replicas=4
+kubectl get all -o wide
+kubectl cordone node node1
+kubectl cordon node node1
+kubectl cordon  node1
+kubectl create deployment nginx-2 --image=nginx  --replicas=4
+kubectl get all -o wide
+kubectl get all --selector app=nginx-2 -o wide
+kubectl get node
+kubectl get all --selector app=nginx -o wide
+kubectl drain node1
+kubectl drain node1 --ignore-daemonset
+kubectl drain node1 --ignore-daemonsets
+kubectl get all --selector app=nginx -o wide
+kubectl uncordon  node1
