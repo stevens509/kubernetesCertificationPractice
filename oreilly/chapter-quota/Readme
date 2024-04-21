@@ -1,0 +1,3 @@
+-  create quota
+- create deployment :  kubectl create deploy nginx --image=nginx --replicas=3 -n limited
+- kubectl set resources deploy nginx  --requests=cpu=100m,memory=5Mi   --limits=cpu=200m,memory=20Mi  -n limited

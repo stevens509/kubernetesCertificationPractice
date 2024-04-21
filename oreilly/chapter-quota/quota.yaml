@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  creationTimestamp: "2024-04-21T12:38:17Z"
+  name: qtest
+  namespace: limited
+  resourceVersion: "44350"
+  uid: 1129350b-1217-432a-8c04-4bac46825b6f
+spec:
+  hard:
+    cpu: 500m
+    memory: 500Mi
+    pods: "3"
+status:
+  hard:
+    cpu: 500m
+    memory: 500Mi
+    pods: "3"
+  used:
+    cpu: 300m
+    memory: 15Mi
+    pods: "3"
