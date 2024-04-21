@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: "2024-04-17T00:20:29Z"
+  labels:
+    kubernetes.io/metadata.name: limited
+  name: limited
+  resourceVersion: "5458"
+  uid: 98a115ae-faf0-483d-8c1c-f3da15d8d066
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active
