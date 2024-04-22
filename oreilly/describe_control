@@ -1,0 +1,89 @@
+Name:               control
+Roles:              control-plane
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=control
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/control-plane=
+                    node.kubernetes.io/exclude-from-external-load-balancers=
+Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: unix:///var/run/containerd/containerd.sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    projectcalico.org/IPv4Address: 10.0.0.4/24
+                    projectcalico.org/IPv4IPIPTunnelAddr: 172.16.42.192
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Tue, 16 Apr 2024 23:32:23 +0000
+Taints:             node-role.kubernetes.io/control-plane:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  control
+  AcquireTime:     <unset>
+  RenewTime:       Sun, 21 Apr 2024 16:12:10 +0000
+Conditions:
+  Type                 Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----                 ------  -----------------                 ------------------                ------                       -------
+  NetworkUnavailable   False   Sun, 21 Apr 2024 15:54:07 +0000   Sun, 21 Apr 2024 15:54:07 +0000   CalicoIsUp                   Calico is running on this node
+  MemoryPressure       False   Sun, 21 Apr 2024 16:08:37 +0000   Tue, 16 Apr 2024 23:32:19 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure         False   Sun, 21 Apr 2024 16:08:37 +0000   Tue, 16 Apr 2024 23:32:19 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure          False   Sun, 21 Apr 2024 16:08:37 +0000   Tue, 16 Apr 2024 23:32:19 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready                True    Sun, 21 Apr 2024 16:08:37 +0000   Tue, 16 Apr 2024 23:33:37 +0000   KubeletReady                 kubelet is posting ready status. AppArmor enabled
+Addresses:
+  InternalIP:  192.168.170.150
+  Hostname:    control
+Capacity:
+  cpu:                4
+  ephemeral-storage:  101590008Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             8092080Ki
+  pods:               110
+Allocatable:
+  cpu:                4
+  ephemeral-storage:  93625351218
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             7989680Ki
+  pods:               110
+System Info:
+  Machine ID:                 a6c63db137a54bd287c6c0941d670f50
+  System UUID:                f9f74d56-fd62-13a2-821a-12a7d9c0446c
+  Boot ID:                    9520679f-becf-4f1d-8168-eae19983e36e
+  Kernel Version:             5.15.0-105-generic
+  OS Image:                   Ubuntu 22.04.4 LTS
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  containerd://1.7.15
+  Kubelet Version:            v1.28.9
+  Kube-Proxy Version:         v1.28.9
+Non-terminated Pods:          (9 in total)
+  Namespace                   Name                                        CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                   ----                                        ------------  ----------  ---------------  -------------  ---
+  kube-system                 calico-kube-controllers-658d97c59c-lvf7k    0 (0%)        0 (0%)      0 (0%)           0 (0%)         4d16h
+  kube-system                 calico-node-lvwwx                           250m (6%)     0 (0%)      0 (0%)           0 (0%)         4d16h
+  kube-system                 coredns-5dd5756b68-6pzvr                    100m (2%)     0 (0%)      70Mi (0%)        170Mi (2%)     4d16h
+  kube-system                 coredns-5dd5756b68-sxs4g                    100m (2%)     0 (0%)      70Mi (0%)        170Mi (2%)     4d16h
+  kube-system                 etcd-control                                100m (2%)     0 (0%)      100Mi (1%)       0 (0%)         4d16h
+  kube-system                 kube-apiserver-control                      250m (6%)     0 (0%)      0 (0%)           0 (0%)         4d16h
+  kube-system                 kube-controller-manager-control             200m (5%)     0 (0%)      0 (0%)           0 (0%)         4d16h
+  kube-system                 kube-proxy-sxdhh                            0 (0%)        0 (0%)      0 (0%)           0 (0%)         4d16h
+  kube-system                 kube-scheduler-control                      100m (2%)     0 (0%)      0 (0%)           0 (0%)         4d16h
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests     Limits
+  --------           --------     ------
+  cpu                1100m (27%)  0 (0%)
+  memory             240Mi (3%)   340Mi (4%)
+  ephemeral-storage  0 (0%)       0 (0%)
+  hugepages-1Gi      0 (0%)       0 (0%)
+  hugepages-2Mi      0 (0%)       0 (0%)
+Events:
+  Type     Reason                   Age                From             Message
+  ----     ------                   ----               ----             -------
+  Normal   Starting                 18m                kube-proxy       
+  Normal   Starting                 19m                kubelet          Starting kubelet.
+  Warning  InvalidDiskCapacity      19m                kubelet          invalid capacity 0 on image filesystem
+  Normal   NodeHasSufficientMemory  19m (x8 over 19m)  kubelet          Node control status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    19m (x7 over 19m)  kubelet          Node control status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     19m (x7 over 19m)  kubelet          Node control status is now: NodeHasSufficientPID
+  Normal   NodeAllocatableEnforced  19m                kubelet          Updated Node Allocatable limit across pods
+  Normal   RegisteredNode           18m                node-controller  Node control event: Registered Node control in Controller
