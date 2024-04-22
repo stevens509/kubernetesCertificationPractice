@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  creationTimestamp: null
+  name: qtest-1
+  namespace: restricted
+spec:
+  hard:
+    memory: 1G
+    pods: "3"
+status: {}

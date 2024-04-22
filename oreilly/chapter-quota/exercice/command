@@ -1,0 +1,14 @@
+kubectl create ns restricted --dry-run=client  -o yaml > namespace.yaml
+kubectl apply -f namespace.yaml
+kubectl create quota qtest1 -h
+
+kubectl create quota qtest-1  --hard=memory=1G,pods=3 -n restricted --dry-run=client -o yaml > quota.yaml
+kubectl apply -f quota.yaml
+kubectl get quota -n restricted
+kubectl create deployment nginx --image=nginx --replicas=4 -n restricted
+kubectl  get all -n restricted
+kubectl get events -n restricted
+kubectl set resources deployment nginx --requests=memory=50Mi  --limits=memory=100Mi -n restricted
+kubectl get events -n restricted
+kubectl  get all -n restricted
+kubectl  get all -n restricted -o wide
